@@ -51,6 +51,10 @@ function generatePDF() {
         return (pdf.getStringUnitWidth(text) * pdf.getFontSize()) / (72 / 25.6)
     }
 
+    function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
     function isEnglishText(text) {
 
         // Regular expressions to match English and Arabic characters
@@ -59,6 +63,28 @@ function generatePDF() {
         // Check if the input text matches English or Arabic
         if (englishRegex.test(text)) {
             return true;
+        }
+
+        return false;
+    }
+
+    function isEnglishText2(text) {
+
+        // Regular expressions to match English and Arabic characters
+        var englishRegex = /^[a-zA-Z0-9\s.,;:'"!?()-]+$/;
+        var words = text.split(" ");
+
+        var count = 0;
+        for (var i = 0; i < 10; i++) {
+            var word = words[getRandomNumber(0, words.length)];
+
+            if (englishRegex.test(word)) {
+                count++;
+
+                if (count >= 3) {
+                    return true;
+                }
+            }
         }
 
         return false;
@@ -1045,7 +1071,7 @@ function generatePDF() {
     }
 
     pdf.setFontSize(pxToPt(18))
-    pdf.text("المـنـتــج", pxToMm(getPageWidthInPx() - 115), pxToMm(y))
+    pdf.text("المضيـــف", pxToMm(getPageWidthInPx() - 125), pxToMm(y))
 
     y += 35
     x += 20
@@ -1310,7 +1336,7 @@ function generatePDF() {
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
 
-    if (isEnglishText($('#host_rules').val())) {
+    if (isEnglishText2($('#host_rules').val())) {
         justify(pdf, $('#host_rules').val().length > 0 ? $('#host_rules').val() : '', pxToMm(x + 5), pxToMm(y + 20), pxToMm(getPageWidthInPx() - x * 2) - 2)
     } else {
         justify(pdf, $('#host_rules').val().length > 0 ? $('#host_rules').val() : '', pxToMm(x + 5), pxToMm(y + 20), pxToMm(getPageWidthInPx() - x * 2) - 2, 'rtl')
