@@ -108,7 +108,7 @@ function generatePDF() {
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.setFontSize(pxToPt(15))
-    pdf.text($("#booking_num").val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + 2, pxToMm(y))
+    pdf.text($("#booking_num").val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($("#booking_num").val()) / 2))) + 2, pxToMm(y))
 
     pdf.setDrawColor('#B5B5B5')
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 80), pxToMm(y - 20), pxToMm(300), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
@@ -156,7 +156,7 @@ function generatePDF() {
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.text('و', pxToMm(getPageWidthInPx() - x - 92), pxToMm(y))
 
-    pdf.text($('#host_name_ar').val(), pxToMm(getPageWidthInPx() - x - 75) - getTextWidth($('#host_name_ar').val()) - 2, pxToMm(y - 3))
+    pdf.text($('#host_name_ar').val(), pxToMm(getPageWidthInPx() - x - 100) - getTextWidth($('#host_name_ar').val()) - 2, pxToMm(y - 3))
     pdf.line(pxToMm(getPageWidthInPx() - x - 320), pxToMm(y), pxToMm(getPageWidthInPx() - x - 95), pxToMm(y), 'D')
 
     y += 20
@@ -164,7 +164,7 @@ function generatePDF() {
     pdf.text('(“Event Organizer’)', pxToMm(x), pxToMm(y))
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.text('and', pxToMm(x + 125), pxToMm(y))
-    pdf.text($('#host_name').val(), pxToMm(x + 110) + 2, pxToMm(y - 3))
+    pdf.text($('#host_name').val(), pxToMm(x + 155) + 2, pxToMm(y - 3))
     pdf.line(pxToMm(x + 150), pxToMm(y), pxToMm(x + 340), pxToMm(y), 'D')
 
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
@@ -221,11 +221,12 @@ function generatePDF() {
     pdf.text("“Event”:", pxToMm(x), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#project_name').val())) {
-        pdf.text($('#project_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + 2, pxToMm(y - 3))
-    } else {
-        pdf.text($('#project_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + pxToMm(300) - 2 - getTextWidth($('#project_name').val()), pxToMm(y - 3))
-    }
+    // if (isEnglishText($('#project_name').val())) {
+    //     pdf.text($('#project_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + 2, pxToMm(y - 3))
+    // } else {
+    //     pdf.text($('#project_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + pxToMm(300) - 2 - getTextWidth($('#project_name').val()), pxToMm(y - 3))
+    // }
+    pdf.text($('#project_name').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#project_name').val()) / 2))) + 2, pxToMm(y - 3))
 
     pdf.setLineDashPattern()
     pdf.setDrawColor('#B5B5B5')
@@ -240,11 +241,13 @@ function generatePDF() {
     pdf.text("“Venue”:", pxToMm(x), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#property_name').val())) {
-        pdf.text($('#property_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + 2, pxToMm(y - 3))
-    } else {
-        pdf.text($('#property_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + pxToMm(300) - 2 - getTextWidth($('#property_name').val()), pxToMm(y - 3))
-    }
+    // if (isEnglishText($('#property_name').val())) {
+    //     pdf.text($('#property_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + 2, pxToMm(y - 3))
+    // } else {
+    //     pdf.text($('#property_name').val(), pxToMm(getPageWidthInPx() / 2 - x - 80) + pxToMm(300) - 2 - getTextWidth($('#property_name').val()), pxToMm(y - 3))
+    // }
+
+    pdf.text($('#property_name').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#property_name').val()) / 2))) + 2, pxToMm(y - 3))
 
     pdf.setLineDashPattern()
     pdf.setDrawColor('#B5B5B5')
@@ -259,11 +262,13 @@ function generatePDF() {
     pdf.text("Located at", pxToMm(x), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#located_at').val())) {
-        pdf.text($('#located_at').val(), pxToMm(getPageWidthInPx() / 2 - x - 150) + 2, pxToMm(y - 3))
-    } else {
-        pdf.text($('#located_at').val(), pxToMm(getPageWidthInPx() / 2 - x - 150) + pxToMm(430) - 2 - getTextWidth($('#located_at').val()), pxToMm(y - 3))
-    }
+    // if (isEnglishText($('#located_at').val())) {
+    //     pdf.text($('#located_at').val(), pxToMm(getPageWidthInPx() / 2 - x - 150) + 2, pxToMm(y - 3))
+    // } else {
+    //     pdf.text($('#located_at').val(), pxToMm(getPageWidthInPx() / 2 - x - 150) + pxToMm(430) - 2 - getTextWidth($('#located_at').val()), pxToMm(y - 3))
+    // }
+
+    pdf.text($('#located_at').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#located_at').val()) / 2))) + 2, pxToMm(y - 3))
 
     pdf.setLineDashPattern()
     pdf.setDrawColor('#B5B5B5')
@@ -279,11 +284,13 @@ function generatePDF() {
     pdf.text("Date", pxToMm(x + 220), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#date').val())) {
-        pdf.text($('#date').val(), pxToMm(getPageWidthInPx() / 2 - 60) + 2, pxToMm(y - 3))
-    } else {
-        pdf.text($('#date').val(), pxToMm(getPageWidthInPx() / 2 - 60) + pxToMm(150) - 2 - getTextWidth($('#date').val()), pxToMm(y - 3))
-    }
+    // if (isEnglishText($('#date').val())) {
+    //     pdf.text($('#date').val(), pxToMm(getPageWidthInPx() / 2 - 60) + 2, pxToMm(y - 3))
+    // } else {
+    //     pdf.text($('#date').val(), pxToMm(getPageWidthInPx() / 2 - 60) + pxToMm(150) - 2 - getTextWidth($('#date').val()), pxToMm(y - 3))
+    // }
+
+    pdf.text($('#date').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#date').val()) / 2))) + 2, pxToMm(y - 3))
 
     pdf.setLineDashPattern()
     pdf.setDrawColor('#B5B5B5')
@@ -297,11 +304,13 @@ function generatePDF() {
     pdf.text("Start time", pxToMm(x + 185), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#start_time').val())) {
-        pdf.text($('#start_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + 2, pxToMm(y - 3))
-    } else {
-        pdf.text($('#start_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + pxToMm(150) - 2 - getTextWidth($('#start_time').val()), pxToMm(y - 3))
-    }
+    // if (isEnglishText($('#start_time').val())) {
+    //     pdf.text($('#start_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + 2, pxToMm(y - 3))
+    // } else {
+    //     pdf.text($('#start_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + pxToMm(150) - 2 - getTextWidth($('#start_time').val()), pxToMm(y - 3))
+    // }
+
+    pdf.text($('#start_time').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#start_time').val()) / 2))) + 2, pxToMm(y - 3))
 
     pdf.setLineDashPattern()
     pdf.setDrawColor('#B5B5B5')
@@ -314,11 +323,13 @@ function generatePDF() {
     pdf.text("End time", pxToMm(x + 190), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#end_time').val())) {
-        pdf.text($('#end_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + 2, pxToMm(y - 3))
-    } else {
-        pdf.text($('#end_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + pxToMm(150) - 2 - getTextWidth($('#end_time').val()), pxToMm(y - 3))
-    }
+    // if (isEnglishText($('#end_time').val())) {
+    //     pdf.text($('#end_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + 2, pxToMm(y - 3))
+    // } else {
+    //     pdf.text($('#end_time').val(), pxToMm(getPageWidthInPx() / 2 - 60) + pxToMm(150) - 2 - getTextWidth($('#end_time').val()), pxToMm(y - 3))
+    // }
+
+    pdf.text($('#end_time').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#end_time').val()) / 2))) + 2, pxToMm(y - 3))
 
     pdf.setLineDashPattern()
     pdf.setDrawColor('#B5B5B5')
@@ -372,9 +383,10 @@ function generatePDF() {
     pdf.setDrawColor('#000000')
     pdf.line(pxToMm(x + 275), pxToMm(y), pxToMm(x + 343), pxToMm(y))
 
-    y += 20
-    pdf.text($('#amount_1_2').val(), pxToMm(x + 20) + 2, pxToMm(y - 3))
+    // y += 20
+    pdf.text($('#amount_1_2').val(), pxToMm(x + 275) + 2, pxToMm(y - 3))
 
+    y += 20
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.text("and detailed in Appendix No (1).", pxToMm(x), pxToMm(y), { charSpace: 0.03 })
 
@@ -524,7 +536,7 @@ function generatePDF() {
 
     pdf.setLineDashPattern([0.5, 0.7])
     pdf.line(pxToMm(x + 70), pxToMm(y), pxToMm(x + 145), pxToMm(y))
-    pdf.text($('#amount_2_5').val(), pxToMm(x) + 2, pxToMm(y - 3))
+    pdf.text($('#amount_2_5').val(), pxToMm(x + 70) + 2, pxToMm(y - 3))
 
     pdf.text(pxToMm(x + 150), pxToMm(y), 'including VAT for the use of the', { charSpace: 0.02 })
 
@@ -949,23 +961,6 @@ function generatePDF() {
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
-    pdf.text("Title:", pxToMm(x + 15), pxToMm(y))
-
-    pdf.setDrawColor('#000000')
-    pdf.setFillColor('#000000')
-    pdf.roundedRect(pxToMm(x + 110), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
-
-    pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_1_title').val())) {
-        pdf.text($('#box_1_title').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_1_title').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_title').val()), pxToMm(y - 2))
-    }
-
-    pdf.text("المسمى الوظيفي", pxToMm(getPageWidthInPx() / 2 - 100), pxToMm(y))
-
-    y += 35
-    pdf.setFontSize(pxToPt(13.5))
     pdf.text("ID number", pxToMm(x + 15), pxToMm(y))
 
     pdf.setDrawColor('#000000')
@@ -980,6 +975,24 @@ function generatePDF() {
     }
 
     pdf.text("هوية رقم", pxToMm(getPageWidthInPx() / 2 - 60), pxToMm(y))
+
+    y += 35
+    pdf.setFontSize(pxToPt(12))
+    pdf.text("License/CR No.:", pxToMm(x + 15), pxToMm(y))
+
+    pdf.setDrawColor('#000000')
+    pdf.setFillColor('#000000')
+    pdf.roundedRect(pxToMm(x + 110), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
+
+    pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
+    if (isEnglishText($('#box_1_title').val())) {
+        pdf.text($('#box_1_title').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
+    } else {
+        pdf.text($('#box_1_title').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_title').val()), pxToMm(y - 2))
+    }
+
+    pdf.setFontSize(pxToPt(13.5))
+    pdf.text("رخصة/سجل", pxToMm(getPageWidthInPx() / 2 - 80), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1134,11 +1147,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#shoot_date').val())) {
-        pdf.text($('#shoot_date').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#shoot_date').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#shoot_date').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#shoot_date').val())) {
+    //     pdf.text($('#shoot_date').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#shoot_date').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#shoot_date').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#shoot_date').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#shoot_date').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("تاريخ الحدث", pxToMm(getPageWidthInPx() - 130), pxToMm(y))
 
@@ -1151,11 +1166,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#start_time_last').val())) {
-        pdf.text($('#start_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#start_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#start_time_last').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#start_time_last').val())) {
+    //     pdf.text($('#start_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#start_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#start_time_last').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#start_time_last').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#start_time_last').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("موعد الدخول", pxToMm(getPageWidthInPx() - 135), pxToMm(y))
 
@@ -1168,11 +1185,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#end_time_last').val())) {
-        pdf.text($('#end_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#end_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#end_time_last').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#end_time_last').val())) {
+    //     pdf.text($('#end_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#end_time_last').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#end_time_last').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#end_time_last').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#end_time_last').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("موعد الخروج", pxToMm(getPageWidthInPx() - 130), pxToMm(y))
 
@@ -1185,11 +1204,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#total_hours').val())) {
-        pdf.text($('#total_hours').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#total_hours').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#total_hours').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#total_hours').val())) {
+    //     pdf.text($('#total_hours').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#total_hours').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#total_hours').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#total_hours').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#total_hours').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("مجموع الساعات", pxToMm(getPageWidthInPx() - 155), pxToMm(y))
 
@@ -1202,11 +1223,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#hourly_rate').val())) {
-        pdf.text($('#hourly_rate').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#hourly_rate').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#hourly_rate').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#hourly_rate').val())) {
+    //     pdf.text($('#hourly_rate').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#hourly_rate').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#hourly_rate').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#hourly_rate').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#hourly_rate').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("سعر الساعة للمساحة", pxToMm(getPageWidthInPx() - 180), pxToMm(y))
 
@@ -1246,11 +1269,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75), 'F')
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#total_booking').val())) {
-        pdf.text($('#total_booking').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#total_booking').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#total_booking').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#total_booking').val())) {
+    //     pdf.text($('#total_booking').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#total_booking').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#total_booking').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#total_booking').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#total_booking').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("إجمالي قيمة الحجز", pxToMm(getPageWidthInPx() - 165), pxToMm(y))
 
@@ -1263,11 +1288,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 41), pxToMm(y - 20), pxToMm(200), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#protection_deposit').val())) {
-        pdf.text($('#protection_deposit').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#protection_deposit').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#protection_deposit').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#protection_deposit').val())) {
+    //     pdf.text($('#protection_deposit').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#protection_deposit').val(), pxToMm(getPageWidthInPx() / 2 - x - 41) + pxToMm(200) - 2 - getTextWidth($('#protection_deposit').val()), pxToMm(y - 2))
+    // }
+
+    pdf.text($('#protection_deposit').val(), pxToMm((getPageWidthInPx() / 2) - (mmToPx(getTextWidth($('#protection_deposit').val()) / 2))) + 2, pxToMm(y - 2))
 
     pdf.text("مبلغ تأمين", pxToMm(getPageWidthInPx() - 115), pxToMm(y))
 
