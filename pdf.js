@@ -1019,11 +1019,12 @@ function generatePDF() {
     pdf.setFontSize(pxToPt(13.5))
     pdf.setTextColor('#000000')
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#producer_name').val())) {
-        pdf.text($('#producer_name').val(), pxToMm(x + 110) + 2, pxToMm(y - 1))
-    } else {
-        pdf.text($('#producer_name').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#producer_name').val()), pxToMm(y - 1))
-    }
+    // if (isEnglishText($('#producer_name').val())) {
+    //     pdf.text($('#producer_name').val(), pxToMm(x + 110) + 2, pxToMm(y - 1))
+    // } else {
+    //     pdf.text($('#producer_name').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#producer_name').val()), pxToMm(y - 1))
+    // }
+    pdf.text($('#producer_name').val(), pxToMm(x + 165 - mmToPx((getTextWidth($('#producer_name').val()) / 2))), pxToMm(y - 1))
 
     pdf.setFontSize(pxToPt(12))
     pdf.setTextColor('#ffffff')
@@ -1041,11 +1042,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 110), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_1_name').val())) {
-        pdf.text($('#box_1_name').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_1_name').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_name').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_1_name').val())) {
+    //     pdf.text($('#box_1_name').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_1_name').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_name').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_1_name').val(), pxToMm(x + 165 - mmToPx((getTextWidth($('#box_1_name').val()) / 2))), pxToMm(y - 2))
+
 
     pdf.text(":" + "الاسم", pxToMm(getPageWidthInPx() / 2 - 44), pxToMm(y))
 
@@ -1058,11 +1061,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 110), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_1_id').val())) {
-        pdf.text($('#box_1_id').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_1_id').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_id').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_1_id').val())) {
+    //     pdf.text($('#box_1_id').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_1_id').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_id').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_1_id').val(), pxToMm(x + 165 - mmToPx((getTextWidth($('#box_1_id').val()) / 2))), pxToMm(y - 2))
+
 
     pdf.text(":" + "هوية رقم", pxToMm(getPageWidthInPx() / 2 - 60), pxToMm(y))
 
@@ -1075,11 +1080,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 110), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_1_title').val())) {
-        pdf.text($('#box_1_title').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_1_title').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_title').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_1_title').val())) {
+    //     pdf.text($('#box_1_title').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_1_title').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_title').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_1_title').val(), pxToMm(x + 165 - mmToPx((getTextWidth($('#box_1_title').val()) / 2))), pxToMm(y - 2))
+
 
     pdf.setFontSize(pxToPt(13.5))
     pdf.text(":" + "رخصة/سجل", pxToMm(getPageWidthInPx() / 2 - 80), pxToMm(y))
@@ -1093,11 +1100,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 110), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_1_date').val())) {
-        pdf.text($('#box_1_date').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_1_date').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_id').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_1_date').val())) {
+    //     pdf.text($('#box_1_date').val(), pxToMm(x + 110) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_1_date').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_id').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_1_date').val(), pxToMm(x + 165 - mmToPx((getTextWidth($('#box_1_date').val()) / 2))), pxToMm(y - 2))
+
 
     pdf.text(":" + "التاريخ", pxToMm(getPageWidthInPx() / 2 - 45), pxToMm(y))
 
@@ -1128,11 +1137,13 @@ function generatePDF() {
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.setFontSize(pxToPt(13.5))
-    if (isEnglishText($('#box_2_host').val())) {
-        pdf.text($('#box_2_host').val(), pxToMm(x + 120) + 2, pxToMm(y - 1))
-    } else {
-        pdf.text($('#box_2_host').val(), pxToMm(x + 120) + pxToMm(110) - 2 - getTextWidth($('#box_2_host').val()), pxToMm(y - 1))
-    }
+    // if (isEnglishText($('#box_2_host').val())) {
+    //     pdf.text($('#box_2_host').val(), pxToMm(x + 120) + 2, pxToMm(y - 1))
+    // } else {
+    //     pdf.text($('#box_2_host').val(), pxToMm(x + 120) + pxToMm(110) - 2 - getTextWidth($('#box_2_host').val()), pxToMm(y - 1))
+    // }
+    pdf.text($('#box_2_host').val(), pxToMm(x + 175 - mmToPx((getTextWidth($('#box_2_host').val()) / 2))), pxToMm(y - 1))
+
 
     pdf.setFontSize(pxToPt(18))
     pdf.text("المضيـــف", pxToMm(getPageWidthInPx() - 125), pxToMm(y))
@@ -1148,11 +1159,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 100), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_2_name').val())) {
-        pdf.text($('#box_2_name').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_2_name').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_name').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_2_name').val())) {
+    //     pdf.text($('#box_2_name').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_2_name').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_name').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_2_name').val(), pxToMm(x + 155 - mmToPx((getTextWidth($('#box_2_name').val()) / 2))), pxToMm(y - 1))
+
 
     pdf.text(":" + "الاسم", pxToMm(getPageWidthInPx() - 95), pxToMm(y))
 
@@ -1164,11 +1177,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 100), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_2_id').val())) {
-        pdf.text($('#box_2_id').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_2_id').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_id').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_2_id').val())) {
+    //     pdf.text($('#box_2_id').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_2_id').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_id').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_2_id').val(), pxToMm(x + 155 - mmToPx((getTextWidth($('#box_2_id').val()) / 2))), pxToMm(y - 1))
+
 
     pdf.text(":" + "هوية رقم", pxToMm(getPageWidthInPx() - 110), pxToMm(y))
 
@@ -1177,11 +1192,13 @@ function generatePDF() {
     pdf.text("License/CR No.:", pxToMm(x - 5), pxToMm(y))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_2_license').val())) {
-        pdf.text($('#box_2_license').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_2_license').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_license').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_2_license').val())) {
+    //     pdf.text($('#box_2_license').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_2_license').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_license').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_2_license').val(), pxToMm(x + 155 - mmToPx((getTextWidth($('#box_2_license').val()) / 2))), pxToMm(y - 1))
+
 
     pdf.setDrawColor('#000000')
     pdf.roundedRect(pxToMm(x + 100), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
@@ -1196,11 +1213,13 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(x + 100), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
-    if (isEnglishText($('#box_2_date').val())) {
-        pdf.text($('#box_2_date').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
-    } else {
-        pdf.text($('#box_2_date').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_date').val()), pxToMm(y - 2))
-    }
+    // if (isEnglishText($('#box_2_date').val())) {
+    //     pdf.text($('#box_2_date').val(), pxToMm(x + 100) + 2, pxToMm(y - 2))
+    // } else {
+    //     pdf.text($('#box_2_date').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_date').val()), pxToMm(y - 2))
+    // }
+    pdf.text($('#box_2_date').val(), pxToMm(x + 155 - mmToPx((getTextWidth($('#box_2_date').val()) / 2))), pxToMm(y - 1))
+
 
     pdf.text(":" + "التاريخ", pxToMm(getPageWidthInPx() - 97), pxToMm(y))
 
@@ -1485,11 +1504,11 @@ function generatePDF() {
         this.wordLength = wordLength;
     };
 
-    var blobPDF = new Blob([pdf.output('blob')], { type: "application/pdf" })
-    var blobURL = URL.createObjectURL(blobPDF)
+    // var blobPDF = new Blob([pdf.output('blob')], { type: "application/pdf" })
+    // var blobURL = URL.createObjectURL(blobPDF)
 
-    // Open the PDF in a new window
-    window.open(blobURL, '_blank');
+    // // Open the PDF in a new window
+    // window.open(blobURL, '_blank');
 }
 
 function downloadPDF() {
@@ -1501,7 +1520,7 @@ function printPDF() {
     pdf.output('dataurlnewwindow')
 }
 
-generatePDF()
+// generatePDF()
 // printPDF()
 
 // var blobPDF = new Blob([pdf.output('blob')], { type: "application/pdf" })
