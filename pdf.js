@@ -259,7 +259,7 @@ function generatePDF() {
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - x - 80), pxToMm(y - 20), pxToMm(300), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
-    pdf.text('“الحدث”', pxToMm(getPageWidthInPx() - x - 55), pxToMm(y))
+    pdf.text(':“الحدث”', pxToMm(getPageWidthInPx() - x - 55), pxToMm(y))
 
     y += 40
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
@@ -322,7 +322,7 @@ function generatePDF() {
     pdf.setDrawColor('#B5B5B5')
     pdf.roundedRect(pxToMm(getPageWidthInPx() / 2 - 60), pxToMm(y - 20), pxToMm(150), pxToMm(30), pxToMm(0.75), pxToMm(0.75))
 
-    pdf.text('الفترة”:', pxToMm(getPageWidthInPx() - x - 50), pxToMm(y))
+    pdf.text(":" + 'الفترة”', pxToMm(getPageWidthInPx() - x - 50), pxToMm(y))
     pdf.text('تبدأ في تاريخ', pxToMm(getPageWidthInPx() - x - 220), pxToMm(y))
 
     y += 40
@@ -389,7 +389,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "والصلاحية في إدارة العقار الواقع في العنوان المذكور وإبرام هذه الاتفاقية", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
 
-    y += 70
+    y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 75), pxToMm(y))
+
+    y += 50
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text("1.2 The Event Organizer", pxToMm(x), pxToMm(y))
@@ -426,7 +429,9 @@ function generatePDF() {
     pdf.line(pxToMm(getPageWidthInPx() - x - 315), pxToMm(y), pxToMm(getPageWidthInPx() - x - 140), pxToMm(y))
 
     y += 20
-    pdf.text("موضح بالتفاصيل في الملحق رقم 1", pxToMm(getPageWidthInPx() - x - 185), pxToMm(y), { charSpace: 0.04 })
+    pdf.text("موضح بالتفاصيل في الملحق رقم", pxToMm(getPageWidthInPx() - x - 175), pxToMm(y), { charSpace: 0.04 })
+
+    pdf.text(".(1)", pxToMm(getPageWidthInPx() - x - 198), pxToMm(y), { charSpace: 0.04 })
 
     y += 40
     pdf.setFontSize(pxToPt(18))
@@ -457,6 +462,8 @@ function generatePDF() {
 
     y += 20
     justify(pdf, "على الامتثال بشروط استخدام الخدمة والتي تشمل سياسات الإلغاء والموجودة على منصة مكانات عبر الموقع الإلكتروني Makanat.com/terms ، سواء أصبح المنتج أو المضيف مستخدمين مسجلين في الموقع أم لا", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
+    y += 60
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 196), pxToMm(y))
 
     pdf.addPage();
     addFooter()
@@ -484,7 +491,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "المضيف لمنظم الحدث وضيوفه ومعداته ومساعديه والشركات التابعة له ووكلائه الحق والإذن للقيام بما يلي: (أ) الوصول إلى الموقع المكان ودخول المنشأة بطريقة تسمح له بتنفيذ الأنشطة المتعلقة بالحدث ؛ (ب) إجراء تسجيل صوتي أو بث موسيقى أو تصوير فيديو، إن وجد؛ (ج) إعداد وتجهيز الديكور والمسرح والمعدات الأخرى اللازمة؛ (د) ضمان سلامة ومنع تعرض الآخرين للخطر خلال فترة العمل واستخدام العقار", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
 
-    y += 250
+    y += 120
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 308), pxToMm(y))
+
+    y += 120
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.3 Event Content:')
@@ -506,7 +516,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "على جميع التصاريح والتراخيص اللازمة قبل بدء الحدث، والامتثال لجميع القوانين واللوائح المعمول بها في المملكة العربية السعودية", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
 
-    y += 110
+    y += 40
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 92), pxToMm(y))
+
+    y += 50
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.4 Rules:')
@@ -524,7 +537,10 @@ function generatePDF() {
     pdf.text("\u2022 ", pxToMm(getPageWidthInPx() - x - 15), pxToMm(y), { charSpace: 0.3 })
     justify(pdf, "يجب على منظم الحدث تزويد المضيف بخطة مفصلة للحدث، بما في ذلك التواريخ وأوقات الاستخدام وعدد الضيوف المتوقع وأي معدات أو احتياجات خاصة", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 110), 'rtl', true, true)
 
-    y += 80
+    y += 40
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 267), pxToMm(y))
+
+    y += 40
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '\u2022 ')
     justify(pdf, 'Event Organizer is required to adhere to the agreed Term.', pxToMm(x + 18), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 70))
@@ -532,15 +548,20 @@ function generatePDF() {
     pdf.text("\u2022 ", pxToMm(getPageWidthInPx() - x - 15), pxToMm(y), { charSpace: 0.3 })
     justify(pdf, "يجب على منظم الحدث الالتزام بالمدة المتفق عليها", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 110), 'rtl', true, true)
 
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 280), pxToMm(y))
+
     y += 40
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '\u2022 ')
     justify(pdf, "Event Organizer must abide to the Venue Owner's Space Rules for the use of the Venue specified in the appendix (1).", pxToMm(x + 18), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 70))
 
     pdf.text("\u2022 ", pxToMm(getPageWidthInPx() - x - 15), pxToMm(y), { charSpace: 0.3 })
-    justify(pdf, "يجب على منظم الحدث الالتزام بقواعد المكان الخاصة بالمضيف لاستخدام المكان والمذكورة في الملحق" + " 1 ", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 110), 'rtl', true, true)
+    justify(pdf, "يجب على منظم الحدث الالتزام بقواعد المكان الخاصة بالمضيف لاستخدام المكان والمذكورة في الملحق", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 110), 'rtl', true, true)
 
-    y += 60
+    y += 20
+    pdf.text(".(1)", pxToMm(getPageWidthInPx() - x - 288), pxToMm(y))
+
+    y += 40
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '\u2022 ')
     justify(pdf, "Event Organizer and guests are not allowed to leave any equipment, personal belongings, in any area of the premises or in the corridors. If any items are left, they will be disposed of without compensation.", pxToMm(x + 18), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 70))
@@ -549,7 +570,10 @@ function generatePDF() {
     pdf.text("\u2022 ", pxToMm(getPageWidthInPx() - x - 15), pxToMm(y), { charSpace: 0.3 })
     justify(pdf, "لا يُسمح لمنظم الحدث والضيوف بترك أي معدات أو متعلقات شخصية في أي منطقة من المبنى أو في الممرات, وإذا تُركت أي أغراض، فسيتم التخلص منها دون تعويض", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 110), 'rtl', true, true)
 
-    y += 110
+    y += 60
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 65), pxToMm(y))
+
+    y += 50
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.5 Payment')
@@ -579,13 +603,18 @@ function generatePDF() {
     pdf.text("يدفع منظم الحدث للمضيف مبلغًا إجماليًا", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), { charSpace: 0.2 })
 
     y += 20
-    pdf.line(pxToMm(getPageWidthInPx() - x - 85), pxToMm(y), pxToMm(getPageWidthInPx() - x - 75 + 67), pxToMm(y))
+    pdf.line(pxToMm(getPageWidthInPx() - x - 85), pxToMm(y), pxToMm(getPageWidthInPx() - x - 105 + 67), pxToMm(y))
     pdf.text($('#amount_2_5_ar').val(), pxToMm(x + 675) - 2 - getTextWidth($('#amount_2_5_ar').val()), pxToMm(y - 3))
+
+    pdf.text("قدره", pxToMm(getPageWidthInPx() - x - 35), pxToMm(y), { charSpace: 0.02 })
 
     pdf.text("شامل الضريبة مقابل استخدام الموقع خلال", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), { charSpace: 0.02 })
 
     y += 20
     pdf.text("المدة المتفق عليها", pxToMm(getPageWidthInPx() - x - 115), pxToMm(y), { charSpace: 0.2 })
+
+    // y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 120), pxToMm(y))
 
     y += 40
     pdf.setFontSize(pxToPt(13.5))
@@ -610,7 +639,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "الحدث خلال الفترة المتفق عليها ، لاستخدام العقار في إطار المشروع", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
 
-    y += 60
+    y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 55), pxToMm(y))
+
+    y += 40
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.7 Overtime fee:')
@@ -631,7 +663,10 @@ function generatePDF() {
     pdf.text("في حالة طلب منظم", pxToMm(getPageWidthInPx() - x - 310), pxToMm(y), { charSpace: 0 })
 
     y += 20
-    justify(pdf, "الحدث زيادة في الفترة ، وبعد موافقة المضيف ، سيتم تحصيل رسوم مقابل استخدام اوقات العمل الإضافي تساوي قيمة الساعة الاضافية الواحدة مضروبة بواحد ونصف (x1.5) للعقار", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
+    justify(pdf, "الحدث زيادة في الفترة ، وبعد موافقة المضيف ، سيتم تحصيل رسوم مقابل استخدام اوقات العمل الإضافي تساوي قيمة الساعة الاضافية الواحدة مضروبة بواحد ونصف", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 90), 'rtl', false, true)
+
+    y += 40
+    pdf.text("." + "للعقار" + "(x1.5)", pxToMm(getPageWidthInPx() - x - 305), pxToMm(y))
 
     pdf.addPage();
     addFooter()
@@ -678,7 +713,7 @@ function generatePDF() {
 
 
     y += 20
-    justify(pdf, "الحجز بشرط أن يقع الإلغاء خلال (24) ساعة من تاريخ استلام تأكيد الحجز وبما لا يقل عن (48) ساعة من التاريخ المقرر لبدء التصوير", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
+    justify(pdf, "الحجز بشرط أن يقع الإلغاء خلال (24) ساعة من تاريخ استلام تأكيد الحجز وبما لا يقل عن (48) ساعة من التاريخ المقرر لبدء .التصوير", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
     y += 80
 
@@ -707,7 +742,7 @@ function generatePDF() {
 
 
     y += 20
-    justify(pdf, "حجوزاتهم بشرط أن يقع الإلغاء قبل ثلاثين (30) يوم من الموعد المحدد لبدء الفاعلية. وفى هذه الحالة سيحصل الضيوف على استرداد كامل (بما في ذلك جميع الرسوم) عن مقابل الحجوزات الملغاة. إذا وقع إلغاء الحجوزات في الفترة ما بين ثلاثين (30) يوم إلى ما قبل سبعة (7) أيام من الوقت المحدد لبدء الفاعلية، فلا يجوز للضيوف إلا استرداد 50٪ من مقابل الحجوزات المدفوعة (باستثناء الرسوم). ولا يجوز استرداد مقابل الحجوزات التي يجرى إلغائها في مدة أقل من سبعة (7) أيام من وقت بدء الفاعلية", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
+    justify(pdf, "حجوزاتهم بشرط أن يقع الإلغاء قبل ثلاثين (30) يوم من الموعد المحدد لبدء الفاعلية. وفى هذه الحالة سيحصل الضيوف على استرداد كامل (بما في ذلك جميع الرسوم) عن مقابل الحجوزات الملغاة. إذا وقع إلغاء الحجوزات في الفترة ما بين ثلاثين (30) يوم إلى ما قبل سبعة (7) أيام من الوقت المحدد لبدء الفاعلية، فلا يجوز للضيوف إلا استرداد 50٪ من مقابل الحجوزات المدفوعة (باستثناء الرسوم). ولا يجوز استرداد مقابل الحجوزات التي يجرى إلغائها في مدة أقل من سبعة (7) أيام من وقت بدء .الفاعلية", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
     y += 200
 
@@ -724,7 +759,10 @@ function generatePDF() {
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     justify(pdf, "2.8.3 في حالة إلغاء الحجوزات من قبل المضيف، فإنه قد يتم فرض الغرامات ضده كما قد يكون مسؤولاً عن التكاليف والنفقات والخسائر الأخرى. في حالة إلغاء الحجوزات بدون عذر ، يوافق المضيف على دفع غرامة قدرها 15% من السعر الإجمالي للحجز والتي تمثل تكاليف إخلاء المنتج لموقع آخر", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 160
+    y += 80
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 240), pxToMm(y))
+
+    y += 90
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.9 Force Majeure:')
@@ -747,7 +785,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "الحدث للموقع بسبب حدث خارج عن سيطرة المنتج (بما في ذلك ، على سبيل المثال لا الحصر ، التأخيرات الناتجة عن الاحوال الجوية) ، فإنه يحق لمنظم الحدث عندئذٍ – وبدون أي تكلفة إضافية – استخدام واستغلال الموقع المشار إليه لفترة زمنية إضافية تساوي الوقت الضائع بسبب حالة القوة القاهرة ، على أن تبدأ هذه المهلة الإضافية في وقت يتفق عليه كلا الطرفين بعد انتهاء حدث القوة القاهرة", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 180
+    y += 120
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 125), pxToMm(y))
+
+    y += 60
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.10 Intellectual Property Rights:')
@@ -770,7 +811,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "من أي نوع في مثل هذه التسجيلات وبأي طرق وأشكال ووسائط معروفة الآن أو التي يتم ابتكارها في المستقبل (بما في ذلك ، على سبيل المثال لا الحصر ، جميع حقوق التأليف والنشر فيها وجميع التجديدات والتمديدات واستعادة حقوق التأليف والنشر المذكورة) ستكون مملوكة ملكية حصرية في جميع أنحاء العالم وإلى الأبد من قبل منظم الحدث", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 140
+    y += 100
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 195), pxToMm(y))
+
+    y += 40
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.11 Legal Compliance:')
@@ -792,6 +836,9 @@ function generatePDF() {
 
     y += 20
     justify(pdf, "لجميع القوانين واللوائح المعمول بها في المملكة العربية السعودية ، بالإضافة إلى ذلك ، يوافق منظم الحدث على تحمل المسؤولية القانونية والمالية عن إنتاج أي محتوى قد ينتهك قوانين المملكة", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
+
+    y += 60
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 78), pxToMm(y))
 
     pdf.addPage();
     addFooter()
@@ -820,7 +867,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "مع اتخاذ العناية المعقولة لمنع أي ضرر للمكان أو محتوياته أثناء الاستخدام ، بتعويض مالك المكان عن أي ضرر مادي يصيب العقار أو محتوياته ، ما لم يتم تقديم تأمين شامل للمسؤولية لصالح مالك المكان. يوافق منظم الفعالية على تعويض أي طرف يتأثر بأي ضرر أو إصابة ناتجة عن استخدام المكان ، بشرط أن يتم الإبلاغ عن الضرر في غضون 48 ساعة من حدوثه. في حالة حدوث أي إجراء أو مطالبة تنشأ عن أو تتعلق بهذه الاتفاقية ، أو استخدام الموقع ، أو إجراء الفعالية ، فإن التعويض الوحيد لمالك المكان هو المطالبة بتعويض مالي", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 260
+    y += 165
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 170), pxToMm(y))
+
+    y += 95
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.13 Notifications:')
@@ -868,7 +918,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "المشار إليها ما لم يطلب منظم الحدث ساعات عمل إضافية ، وفي جميع الحالات ، تنتهي عند انتهاء حدث المنظم", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 80
+    y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 252), pxToMm(y))
+
+    y += 60
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.15 Governing Law:')
@@ -891,7 +944,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "وفقًا لقوانين المملكة العربية السعودية، وتتمتع المحاكم السعودية بالسلطة القضائية لنظر أي نزاع أو خلاف ينشأ عنها أو فيما يتعلق بها", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 80
+    y += 40
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 70), pxToMm(y))
+
+    y += 40
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.16 Bilingual Agreement:')
@@ -914,7 +970,10 @@ function generatePDF() {
     y += 20
     justify(pdf, "والانجليزية وفي حالة وجود تعارض بين النص العربي والنص الإنجليزي يتم ترجيح النص العربي", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
-    y += 60
+    y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 164), pxToMm(y))
+
+    y += 40
     pdf.setFontSize(pxToPt(13.5))
     pdf.setFont('IBMPlexSansArabic-SemiBold', 'normal')
     pdf.text(pxToMm(x), pxToMm(y), '2.17')
@@ -935,7 +994,12 @@ function generatePDF() {
     y += 20
     justify(pdf, "الطرفين، ولكل نسخة الدرجة نفسها من الحجية وقد تسلم كل طرف نسخة منه", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
+    y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 82), pxToMm(y))
+
     y += 50
+    pdf.setDrawColor('#000000')
+    pdf.setFillColor('#000000')
     pdf.roundedRect(pxToMm(x), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - x), pxToMm(210), pxToMm(0.75), pxToMm(0.75))
 
     pdf.setDrawColor('#000000')
@@ -983,7 +1047,7 @@ function generatePDF() {
         pdf.text($('#box_1_name').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_name').val()), pxToMm(y - 2))
     }
 
-    pdf.text("الاسم", pxToMm(getPageWidthInPx() / 2 - 44), pxToMm(y))
+    pdf.text(":" + "الاسم", pxToMm(getPageWidthInPx() / 2 - 44), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1000,7 +1064,7 @@ function generatePDF() {
         pdf.text($('#box_1_id').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_id').val()), pxToMm(y - 2))
     }
 
-    pdf.text("هوية رقم", pxToMm(getPageWidthInPx() / 2 - 60), pxToMm(y))
+    pdf.text(":" + "هوية رقم", pxToMm(getPageWidthInPx() / 2 - 60), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(12))
@@ -1018,7 +1082,7 @@ function generatePDF() {
     }
 
     pdf.setFontSize(pxToPt(13.5))
-    pdf.text("رخصة/سجل", pxToMm(getPageWidthInPx() / 2 - 80), pxToMm(y))
+    pdf.text(":" + "رخصة/سجل", pxToMm(getPageWidthInPx() / 2 - 80), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1035,7 +1099,7 @@ function generatePDF() {
         pdf.text($('#box_1_date').val(), pxToMm(x + 110) + pxToMm(110) - 2 - getTextWidth($('#box_1_id').val()), pxToMm(y - 2))
     }
 
-    pdf.text("التاريخ", pxToMm(getPageWidthInPx() / 2 - 45), pxToMm(y))
+    pdf.text(":" + "التاريخ", pxToMm(getPageWidthInPx() / 2 - 45), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1090,7 +1154,7 @@ function generatePDF() {
         pdf.text($('#box_2_name').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_name').val()), pxToMm(y - 2))
     }
 
-    pdf.text("الاسم", pxToMm(getPageWidthInPx() - 95), pxToMm(y))
+    pdf.text(":" + "الاسم", pxToMm(getPageWidthInPx() - 95), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1106,7 +1170,7 @@ function generatePDF() {
         pdf.text($('#box_2_id').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_id').val()), pxToMm(y - 2))
     }
 
-    pdf.text("هوية رقم", pxToMm(getPageWidthInPx() - 110), pxToMm(y))
+    pdf.text(":" + "هوية رقم", pxToMm(getPageWidthInPx() - 110), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1122,7 +1186,7 @@ function generatePDF() {
     pdf.setDrawColor('#000000')
     pdf.roundedRect(pxToMm(x + 100), pxToMm(y - 15), pxToMm(110), pxToMm(20), pxToMm(0.75), pxToMm(0.75))
 
-    pdf.text("رخصة/سجل", pxToMm(getPageWidthInPx() - 130), pxToMm(y))
+    pdf.text(":" + "رخصة/سجل", pxToMm(getPageWidthInPx() - 130), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1138,7 +1202,7 @@ function generatePDF() {
         pdf.text($('#box_2_date').val(), pxToMm(x + 100) + pxToMm(110) - 2 - getTextWidth($('#box_2_date').val()), pxToMm(y - 2))
     }
 
-    pdf.text("التاريخ", pxToMm(getPageWidthInPx() - 97), pxToMm(y))
+    pdf.text(":" + "التاريخ", pxToMm(getPageWidthInPx() - 97), pxToMm(y))
 
     y += 35
     pdf.setFontSize(pxToPt(13.5))
@@ -1280,6 +1344,9 @@ function generatePDF() {
     y += 20
     justify(pdf, "قيمة الساعة الواحدة مضروبًا في 1.5 لرسوم العقار واجور مدير الموقع", pxToMm(getPageWidthInPx() - x - 313), pxToMm(y), pxToMm(getPageWidthInPx() / 2 - 80), 'rtl')
 
+    y += 20
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 40), pxToMm(y))
+
     y += 40
     pdf.setDrawColor('#D5D5D5')
     pdf.setFillColor('#D5D5D5')
@@ -1347,7 +1414,10 @@ function generatePDF() {
     pdf.setFont('IBMPlexSansArabic-Regular', 'normal')
     justify(pdf, "إخلاء مسؤولية: يقر المستخدم بأن مقدمي الخدمات التي توفرهم مكانات إنما هم مقاولون مستقلون، وأن علاقة مكانات بمقدمي الخدمات هي علاقة مستقلة تماما عن علاقتها بالمستخدم. لذلك، لا يجوز صراحة ولا ضمناً أن تكون مكانات مسؤولة عن أي خدمة مقدمة أو خسارة أو ضرر ينشا أو يترتب عن ذلك بشكل مباشر أو غير مباشر . ولا تتدخل مكانات في تقييم مقدمي الخدمات، ولا يجوز اعتبار وجود اسم مقدم الخدمة في الدليل أو بالمنصة بأي حال على أنه توصية لاختيار مقدم خدمة معين. ويكون مقدم الخدمة مسؤولاً وحده عن جودة ومدى تناسب الخدمة المقدمة كما يكون مسؤولاً عن المعلومات التي يقدمها", pxToMm(x), pxToMm(y), pxToMm(getPageWidthInPx() - x - 52), 'rtl')
 
-    y += 100
+    y += 80
+    pdf.text(".", pxToMm(getPageWidthInPx() - x - 300), pxToMm(y))
+
+    y += 20
     pdf.line(pxToMm(x), pxToMm(y), pxToMm(getPageWidthInPx() - x), pxToMm(y))
 
     y += 20
@@ -1415,11 +1485,11 @@ function generatePDF() {
         this.wordLength = wordLength;
     };
 
-    // var blobPDF = new Blob([pdf.output('blob')], { type: "application/pdf" })
-    // var blobURL = URL.createObjectURL(blobPDF)
+    var blobPDF = new Blob([pdf.output('blob')], { type: "application/pdf" })
+    var blobURL = URL.createObjectURL(blobPDF)
 
-    // // Open the PDF in a new window
-    // window.open(blobURL, '_blank');
+    // Open the PDF in a new window
+    window.open(blobURL, '_blank');
 }
 
 function downloadPDF() {
@@ -1431,7 +1501,7 @@ function printPDF() {
     pdf.output('dataurlnewwindow')
 }
 
-// generatePDF()
+generatePDF()
 // printPDF()
 
 // var blobPDF = new Blob([pdf.output('blob')], { type: "application/pdf" })
